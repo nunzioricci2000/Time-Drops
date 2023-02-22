@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */; };
+		CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB5129A518750082E9FB /* PhysicsView.swift */; };
+		CD00EB5429A518750082E9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD00EB5329A518750082E9FB /* Assets.xcassets */; };
+		CD00EB5729A518750082E9FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD00EB5629A518750082E9FB /* Preview Assets.xcassets */; };
+		CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB5F29A562350082E9FB /* CoreGraphics+Operations.swift */; };
+		CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB6229A564F80082E9FB /* PhysicsBody.swift */; };
+		CD00EB6529A56DDE0082E9FB /* PhysicsWorld.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB6429A56DDE0082E9FB /* PhysicsWorld.swift */; };
+		CD00EB6729A56F2B0082E9FB /* MutableCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB6629A56F2B0082E9FB /* MutableCollection+Extension.swift */; };
+		CD00EB7629A5723C0082E9FB /* PhysicsBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */; };
+		CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */; };
+		CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7F29A650E20082E9FB /* StreamShape.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD00EB7029A572070082E9FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD00EB4429A518740082E9FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD00EB4B29A518750082E9FB;
+			remoteInfo = Chimpions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD00EB4C29A518750082E9FB /* Chimpions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimpions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpionsApp.swift; sourceTree = "<group>"; };
+		CD00EB5129A518750082E9FB /* PhysicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsView.swift; sourceTree = "<group>"; };
+		CD00EB5329A518750082E9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD00EB5629A518750082E9FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD00EB5F29A562350082E9FB /* CoreGraphics+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Operations.swift"; sourceTree = "<group>"; };
+		CD00EB6229A564F80082E9FB /* PhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBody.swift; sourceTree = "<group>"; };
+		CD00EB6429A56DDE0082E9FB /* PhysicsWorld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsWorld.swift; sourceTree = "<group>"; };
+		CD00EB6629A56F2B0082E9FB /* MutableCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MutableCollection+Extension.swift"; sourceTree = "<group>"; };
+		CD00EB6C29A572070082E9FB /* ChimpionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChimpionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyTests.swift; sourceTree = "<group>"; };
+		CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsJoint.swift; sourceTree = "<group>"; };
+		CD00EB7F29A650E20082E9FB /* StreamShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamShape.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD00EB4929A518750082E9FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD00EB6929A572070082E9FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD00EB4329A518740082E9FB = {
+			isa = PBXGroup;
+			children = (
+				CD00EB4E29A518750082E9FB /* Chimpions */,
+				CD00EB6D29A572070082E9FB /* ChimpionsTests */,
+				CD00EB4D29A518750082E9FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD00EB4D29A518750082E9FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB4C29A518750082E9FB /* Chimpions.app */,
+				CD00EB6C29A572070082E9FB /* ChimpionsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD00EB4E29A518750082E9FB /* Chimpions */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB7E29A650A20082E9FB /* Components */,
+				CD00EB7D29A650830082E9FB /* Views */,
+				CD00EB5E29A5620F0082E9FB /* Extentions */,
+				CD00EB5D29A561E50082E9FB /* Fluid */,
+				CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */,
+				CD00EB5129A518750082E9FB /* PhysicsView.swift */,
+				CD00EB5329A518750082E9FB /* Assets.xcassets */,
+				CD00EB5529A518750082E9FB /* Preview Content */,
+			);
+			path = Chimpions;
+			sourceTree = "<group>";
+		};
+		CD00EB5529A518750082E9FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB5629A518750082E9FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD00EB5D29A561E50082E9FB /* Fluid */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB7C29A64C150082E9FB /* Graphics */,
+				CD00EB6129A564D80082E9FB /* Physics */,
+			);
+			path = Fluid;
+			sourceTree = "<group>";
+		};
+		CD00EB5E29A5620F0082E9FB /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB5F29A562350082E9FB /* CoreGraphics+Operations.swift */,
+				CD00EB6629A56F2B0082E9FB /* MutableCollection+Extension.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		CD00EB6129A564D80082E9FB /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB6229A564F80082E9FB /* PhysicsBody.swift */,
+				CD00EB6429A56DDE0082E9FB /* PhysicsWorld.swift */,
+				CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		CD00EB6D29A572070082E9FB /* ChimpionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB7729A57FB70082E9FB /* ExtentionsTests */,
+				CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */,
+			);
+			path = ChimpionsTests;
+			sourceTree = "<group>";
+		};
+		CD00EB7729A57FB70082E9FB /* ExtentionsTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExtentionsTests;
+			sourceTree = "<group>";
+		};
+		CD00EB7C29A64C150082E9FB /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
+		CD00EB7D29A650830082E9FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD00EB7E29A650A20082E9FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CD00EB7F29A650E20082E9FB /* StreamShape.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD00EB4B29A518750082E9FB /* Chimpions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD00EB5A29A518750082E9FB /* Build configuration list for PBXNativeTarget "Chimpions" */;
+			buildPhases = (
+				CD00EB4829A518750082E9FB /* Sources */,
+				CD00EB4929A518750082E9FB /* Frameworks */,
+				CD00EB4A29A518750082E9FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chimpions;
+			productName = Chimpions;
+			productReference = CD00EB4C29A518750082E9FB /* Chimpions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD00EB6B29A572070082E9FB /* ChimpionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD00EB7229A572070082E9FB /* Build configuration list for PBXNativeTarget "ChimpionsTests" */;
+			buildPhases = (
+				CD00EB6829A572070082E9FB /* Sources */,
+				CD00EB6929A572070082E9FB /* Frameworks */,
+				CD00EB6A29A572070082E9FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD00EB7129A572070082E9FB /* PBXTargetDependency */,
+			);
+			name = ChimpionsTests;
+			productName = ChimpionsTests;
+			productReference = CD00EB6C29A572070082E9FB /* ChimpionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD00EB4429A518740082E9FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CD00EB4B29A518750082E9FB = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CD00EB6B29A572070082E9FB = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CD00EB4B29A518750082E9FB;
+					};
+				};
+			};
+			buildConfigurationList = CD00EB4729A518740082E9FB /* Build configuration list for PBXProject "Chimpions" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD00EB4329A518740082E9FB;
+			productRefGroup = CD00EB4D29A518750082E9FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD00EB4B29A518750082E9FB /* Chimpions */,
+				CD00EB6B29A572070082E9FB /* ChimpionsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD00EB4A29A518750082E9FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD00EB5729A518750082E9FB /* Preview Assets.xcassets in Resources */,
+				CD00EB5429A518750082E9FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD00EB6A29A572070082E9FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD00EB4829A518750082E9FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD00EB6729A56F2B0082E9FB /* MutableCollection+Extension.swift in Sources */,
+				CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */,
+				CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */,
+				CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */,
+				CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */,
+				CD00EB6529A56DDE0082E9FB /* PhysicsWorld.swift in Sources */,
+				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
+				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD00EB6829A572070082E9FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD00EB7629A5723C0082E9FB /* PhysicsBodyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD00EB7129A572070082E9FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD00EB4B29A518750082E9FB /* Chimpions */;
+			targetProxy = CD00EB7029A572070082E9FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD00EB5829A518750082E9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD00EB5929A518750082E9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD00EB5B29A518750082E9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.Chimpions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD00EB5C29A518750082E9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.Chimpions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD00EB7329A572070082E9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.ChimpionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chimpions.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chimpions";
+			};
+			name = Debug;
+		};
+		CD00EB7429A572070082E9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.ChimpionsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chimpions.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chimpions";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD00EB4729A518740082E9FB /* Build configuration list for PBXProject "Chimpions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD00EB5829A518750082E9FB /* Debug */,
+				CD00EB5929A518750082E9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD00EB5A29A518750082E9FB /* Build configuration list for PBXNativeTarget "Chimpions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD00EB5B29A518750082E9FB /* Debug */,
+				CD00EB5C29A518750082E9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD00EB7229A572070082E9FB /* Build configuration list for PBXNativeTarget "ChimpionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD00EB7329A572070082E9FB /* Debug */,
+				CD00EB7429A572070082E9FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD00EB4429A518740082E9FB /* Project object */;
+}
