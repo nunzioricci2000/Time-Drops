@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152E6DAD29A652CE001878E7 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAC29A652CE001878E7 /* Graphics.swift */; };
+		152E6DAF29A652DD001878E7 /* ExtentionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */; };
+		152E6DB129A652E6001878E7 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DB029A652E6001878E7 /* Views.swift */; };
 		CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */; };
 		CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB5129A518750082E9FB /* PhysicsView.swift */; };
 		CD00EB5429A518750082E9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD00EB5329A518750082E9FB /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		152E6DAC29A652CE001878E7 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
+		152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsTests.swift; sourceTree = "<group>"; };
+		152E6DB029A652E6001878E7 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		CD00EB4C29A518750082E9FB /* Chimpions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimpions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpionsApp.swift; sourceTree = "<group>"; };
 		CD00EB5129A518750082E9FB /* PhysicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		CD00EB7729A57FB70082E9FB /* ExtentionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */,
 			);
 			path = ExtentionsTests;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		CD00EB7C29A64C150082E9FB /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				152E6DAC29A652CE001878E7 /* Graphics.swift */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 		CD00EB7D29A650830082E9FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				152E6DB029A652E6001878E7 /* Views.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,7 +286,9 @@
 				CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */,
 				CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */,
 				CD00EB6529A56DDE0082E9FB /* PhysicsWorld.swift in Sources */,
+				152E6DAD29A652CE001878E7 /* Graphics.swift in Sources */,
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
+				152E6DB129A652E6001878E7 /* Views.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152E6DAF29A652DD001878E7 /* ExtentionsTests.swift in Sources */,
 				CD00EB7629A5723C0082E9FB /* PhysicsBodyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
-				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				DEVELOPMENT_TEAM = TK83CG584J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -452,7 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
-				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
+				DEVELOPMENT_TEAM = TK83CG584J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
