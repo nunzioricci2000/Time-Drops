@@ -21,7 +21,9 @@
 		CD00EB7629A5723C0082E9FB /* PhysicsBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */; };
 		CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */; };
 		CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7F29A650E20082E9FB /* StreamShape.swift */; };
-		CDF7E5CE29A6665B0032459D /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5CD29A6665B0032459D /* FloatingButton.swift */; };
+		CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */; };
+		CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */; };
+		CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +53,9 @@
 		CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyTests.swift; sourceTree = "<group>"; };
 		CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsJoint.swift; sourceTree = "<group>"; };
 		CD00EB7F29A650E20082E9FB /* StreamShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamShape.swift; sourceTree = "<group>"; };
-		CDF7E5CD29A6665B0032459D /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
+		CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsNode.swift; sourceTree = "<group>"; };
+		CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				CD00EB5129A518750082E9FB /* PhysicsView.swift */,
 				CD00EB5329A518750082E9FB /* Assets.xcassets */,
 				CD00EB5529A518750082E9FB /* Preview Content */,
+				CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */,
 			);
 			path = Chimpions;
 			sourceTree = "<group>";
@@ -162,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				152E6DAC29A652CE001878E7 /* Graphics.swift */,
+				CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */,
+				CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -178,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				CD00EB7F29A650E20082E9FB /* StreamShape.swift */,
-				CDF7E5CD29A6665B0032459D /* FloatingButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -287,13 +293,15 @@
 				CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */,
 				CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */,
 				CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */,
+				CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */,
+				CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */,
 				CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */,
+				CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */,
 				CD00EB6529A56DDE0082E9FB /* PhysicsWorld.swift in Sources */,
 				152E6DAD29A652CE001878E7 /* Graphics.swift in Sources */,
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
 				152E6DB129A652E6001878E7 /* Views.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
-				CDF7E5CE29A6665B0032459D /* FloatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

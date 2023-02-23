@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct PhysicsJoint {
+struct PhysicsJoint: Identifiable {
     var normalLength: CGFloat = 50
     let k: CGFloat = 10
+    let id = UUID()
     
     var body1: PhysicsBody
     var body2: PhysicsBody
