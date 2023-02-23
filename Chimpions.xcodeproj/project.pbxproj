@@ -10,6 +10,7 @@
 		152E6DAD29A652CE001878E7 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAC29A652CE001878E7 /* Graphics.swift */; };
 		152E6DAF29A652DD001878E7 /* ExtentionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */; };
 		1588648029A7A584006D10DC /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588647F29A7A584006D10DC /* Onboarding.swift */; };
+		15E85AC329A7A63500E7FF33 /* MainViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */; };
 		CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */; };
 		CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB5129A518750082E9FB /* PhysicsView.swift */; };
 		CD00EB5429A518750082E9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD00EB5329A518750082E9FB /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		152E6DAC29A652CE001878E7 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 		152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsTests.swift; sourceTree = "<group>"; };
 		1588647F29A7A584006D10DC /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFlow.swift; sourceTree = "<group>"; };
 		CD00EB4C29A518750082E9FB /* Chimpions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimpions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChimpionsApp.swift; sourceTree = "<group>"; };
 		CD00EB5129A518750082E9FB /* PhysicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				1588647F29A7A584006D10DC /* Onboarding.swift */,
+				15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				1588648029A7A584006D10DC /* Onboarding.swift in Sources */,
 				CD00EB6529A56DDE0082E9FB /* PhysicsWorld.swift in Sources */,
 				152E6DAD29A652CE001878E7 /* Graphics.swift in Sources */,
+				15E85AC329A7A63500E7FF33 /* MainViewFlow.swift in Sources */,
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
 			);

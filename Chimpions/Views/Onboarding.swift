@@ -11,6 +11,7 @@ struct Onboarding: View {
     var body: some View {
         ZStack{
             StreamComponent()
+                .offset(y: 50)
             
             VStack{
                 
@@ -18,20 +19,23 @@ struct Onboarding: View {
                     Text("Welcome!")
                         .font(.system(size: 50.0))
                         .fontWeight(.semibold)
+                        .fontDesign(.rounded)
                     
                     
                     Text("appName? will help you manage your daily tasks.")
                         .font(.system(size: 25.0))
                         .fontWeight(.medium)
+                        .fontDesign(.rounded)
                     
                 }
-                .padding(.top, 130.0)
+                .padding(.top, 190.0)
                 
                 Spacer()
                 
                 VStack {
                     Text("To do that, let’s set your daily working hours.")
                         .font(.system(size: 20))
+                        .fontDesign(.rounded)
                     
                     HStack{
                         Spacer()
@@ -44,9 +48,11 @@ struct Onboarding: View {
                                         .padding(.horizontal, 5.0)
                                         .foregroundColor(Color("PlaceHolderFirst"))
                                     Text("\(Int.random(in: 0...24))")
+                                        .fontDesign(.rounded)
                                 }
                                 Text("D\(id)")
                                     .foregroundColor(Color("PlaceHolderSecond"))
+                                    .fontDesign(.rounded)
                             }
                         }
                         Spacer()
@@ -64,6 +70,7 @@ struct Onboarding: View {
                     Text("Done")
                         .foregroundColor(.white)
                         .font(.system(size: 22))
+                        .fontDesign(.rounded)
                 }
                 
             }
