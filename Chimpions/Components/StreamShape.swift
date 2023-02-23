@@ -54,7 +54,7 @@ struct StreamComponent: View {
     var body: some View {
         StreamShape(animationStatus: animationStatus)
             .opacity(0.15)
-            .frame(height: 300)
+            .frame(height: 220)
             .animation(.linear(duration: 2).repeatForever(autoreverses: false),
                        value: animationStatus)
             .onAppear {

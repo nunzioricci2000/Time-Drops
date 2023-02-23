@@ -23,6 +23,7 @@ struct MainViewFlow: View {
     }()
     
     @State var startRotation = false
+    @State var taskSelectedOpen = false
     
     func squareAnimation(color: Color) -> some View {
         ZStack {
@@ -50,7 +51,8 @@ struct MainViewFlow: View {
     var body: some View {
         ZStack{
             StreamComponent()
-                .offset(y: 50)
+                .offset(y: taskSelectedOpen ? -130 : -150)
+                .scaleEffect(taskSelectedOpen ? 3.0 : 1.0)
             
             VStack {
                 
@@ -100,11 +102,55 @@ struct MainViewFlow: View {
                             .fontDesign(.rounded)
                     }
                     
-                    taskPlaceholder
-                        .offset(x: -126)
-                    taskPlaceholder
-                    taskPlaceholder
-                        .offset(x: 126)
+                    if !taskSelectedOpen {
+                        taskPlaceholder
+                            .offset(x: -126)
+                        
+                        taskPlaceholder
+                            .onTapGesture {
+                                withAnimation(.linear(duration: 1.0)) {
+                                    taskSelectedOpen.toggle()
+                                }
+                            }
+                        
+                        taskPlaceholder
+                            .offset(x: 126)
+                    }
+                    
+                    else{
+                        ZStack {
+                            ZStack{
+                                squareAnimation(color: .gray)
+                                Text("1")
+                                    .font(.system(size: 22))
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
+                            }
+                            
+                            
+                            ZStack{
+                                squareAnimation(color: .gray)
+                                Text("2")
+                                    .font(.system(size: 22))
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
+                            }
+                            .onTapGesture {
+                                withAnimation(.linear(duration: 1.0)) {
+                                    taskSelectedOpen.toggle()
+                                }
+                            }
+                            
+                            ZStack{
+                                squareAnimation(color: .gray)
+                                Text("3")
+                                    .font(.system(size: 22))
+                                    .fontWeight(.bold)
+                                    .fontDesign(.rounded)
+                            }
+                            
+                        }
+                    }
                 }
                 .offset(y: 20)
                 
