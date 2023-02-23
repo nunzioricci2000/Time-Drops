@@ -24,6 +24,8 @@
 		CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */; };
 		CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */; };
 		CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */; };
+		CDF7E5D729A7AA250032459D /* PersistencyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D629A7AA250032459D /* PersistencyHandler.swift */; };
+		CDF7E5DA29A7AB1C0032459D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D829A7AB1C0032459D /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
 		CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsNode.swift; sourceTree = "<group>"; };
 		CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsConnection.swift; sourceTree = "<group>"; };
+		CDF7E5D629A7AA250032459D /* PersistencyHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyHandler.swift; sourceTree = "<group>"; };
+		CDF7E5D929A7AB1C0032459D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		CD00EB4E29A518750082E9FB /* Chimpions */ = {
 			isa = PBXGroup;
 			children = (
+				CDF7E5D529A7A43C0032459D /* Model */,
 				CD00EB7E29A650A20082E9FB /* Components */,
 				CD00EB7D29A650830082E9FB /* Views */,
 				CD00EB5E29A5620F0082E9FB /* Extentions */,
@@ -187,6 +192,15 @@
 				CD00EB7F29A650E20082E9FB /* StreamShape.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CDF7E5D529A7A43C0032459D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDF7E5D629A7AA250032459D /* PersistencyHandler.swift */,
+				CDF7E5D829A7AB1C0032459D /* DataModel.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +307,9 @@
 				CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */,
 				CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */,
 				CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */,
+				CDF7E5D729A7AA250032459D /* PersistencyHandler.swift in Sources */,
 				CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */,
+				CDF7E5DA29A7AB1C0032459D /* DataModel.xcdatamodeld in Sources */,
 				CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */,
 				CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */,
 				CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */,
@@ -564,6 +580,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CDF7E5D829A7AB1C0032459D /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CDF7E5D929A7AB1C0032459D /* DataModel.xcdatamodel */,
+			);
+			currentVersion = CDF7E5D929A7AB1C0032459D /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CD00EB4429A518740082E9FB /* Project object */;
 }
