@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChimpionsApp: App {
+    // @StateObject var appModel: AppModel = AppModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainViewFlow()
+            PhysicsView()
+                // .environmentObject(appModel)
         }
     }
 }

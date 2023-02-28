@@ -94,3 +94,11 @@ extension CGPoint {
         self = self - other
     }
 }
+
+extension CGPoint: Comparable {
+    public static func < (lhs: CGPoint, rhs: CGPoint) -> Bool {
+        if lhs.y < rhs.y { return true }
+        if lhs.y == rhs.y, lhs.x < rhs.x { return true }
+        return false
+    }
+}

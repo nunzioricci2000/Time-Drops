@@ -14,14 +14,25 @@ struct PhysicsObject: View {
     @State private var tapBody: PhysicsBody?
     
     var body: some View {
-        ZStack {
-            Color.pink
-            ForEach(physicsWorld.bodies) { body in
-                Circle().frame(width: 20)
-                    .position(x: body.position.x,
-                            y: body.position.y)
+        Fluidify {
+            ZStack {
+                Rectangle()
+                    .frame(width: 500, height: 200)
+                    .offset(y: -300)
+                Ellipse()
+                    .frame(height: 200)
+                    .offset(y: 300)
+                ForEach(physicsWorld.bodies) { body in
+                    Circle().frame(width: 90)
+                        .position(x: body.position.x,
+                                  y: body.position.y)
+                }
             }
-        }.gesture(DragGesture(minimumDistance: 0)
+        }.background {
+            Color.pink
+                .ignoresSafeArea()
+        }.ignoresSafeArea()
+        .gesture(DragGesture(minimumDistance: 0)
             .onChanged { gesture in
                 if tapBody == nil {
                     tapBody = PhysicsBody()
@@ -67,6 +78,7 @@ struct PhysicsObject: View {
                 update()
             }
         }
+            
     }
     
     func update() {
