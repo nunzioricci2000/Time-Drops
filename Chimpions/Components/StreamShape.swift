@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private struct StreamShape: Shape {
+struct StreamShape: Shape {
     var animationStatus: Double = 0
     
     let precision: Double = 100
