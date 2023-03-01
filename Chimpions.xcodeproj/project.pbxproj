@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		152E6DAF29A652DD001878E7 /* ExtentionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */; };
-		153E97EF29AE3A43001CFA53 /* TaskTimerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153E97EE29AE3A43001CFA53 /* TaskTimerDetail.swift */; };
-		153E97F129AE3FDA001CFA53 /* CTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153E97F029AE3FDA001CFA53 /* CTask.swift */; };
 		1588648029A7A584006D10DC /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588647F29A7A584006D10DC /* Onboarding.swift */; };
 		15E85AC329A7A63500E7FF33 /* MainViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */; };
 		CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */; };
@@ -47,8 +45,6 @@
 
 /* Begin PBXFileReference section */
 		152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsTests.swift; sourceTree = "<group>"; };
-		153E97EE29AE3A43001CFA53 /* TaskTimerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimerDetail.swift; sourceTree = "<group>"; };
-		153E97F029AE3FDA001CFA53 /* CTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTask.swift; sourceTree = "<group>"; };
 		1588647F29A7A584006D10DC /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFlow.swift; sourceTree = "<group>"; };
 		CD00EB4C29A518750082E9FB /* Chimpions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimpions.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,7 +197,6 @@
 				1588647F29A7A584006D10DC /* Onboarding.swift */,
 				15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */,
 				CDF7E5DD29A7D2430032459D /* ViewRoot.swift */,
-				153E97EE29AE3A43001CFA53 /* TaskTimerDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,14 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				153E97F129AE3FDA001CFA53 /* CTask.swift in Sources */,
 				CD00EB6729A56F2B0082E9FB /* MutableCollection+Extension.swift in Sources */,
 				CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */,
 				CD00EB5229A518750082E9FB /* PhysicsView.swift in Sources */,
 				CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */,
 				CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */,
 				CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */,
-				153E97EF29AE3A43001CFA53 /* TaskTimerDetail.swift in Sources */,
 				CD00EB6329A564F80082E9FB /* PhysicsBody.swift in Sources */,
 				CDF7E5E529A7EF950032459D /* GraphicsPolygon.swift in Sources */,
 				CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */,
@@ -498,30 +491,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
-				DEVELOPMENT_TEAM = TK83CG584J;
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Work Drops";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.01;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.workdrops;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.Chimpions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -533,30 +520,24 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chimpions/Preview Content\"";
-				DEVELOPMENT_TEAM = TK83CG584J;
+				DEVELOPMENT_TEAM = 57Z9KVXBQ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Work Drops";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.01;
-				PRODUCT_BUNDLE_IDENTIFIER = ada.workdrops;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bng.Chimpions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
