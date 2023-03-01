@@ -11,4 +11,10 @@ struct CTask: Codable, Identifiable {
     var id = UUID()
     var projectId: UUID
     var duration: TimeInterval
+    var project: CProject? {
+        try? PersistencyManager.shared.load(projectId: projectId)
+    }
+    var name : String? {
+        project?.name
+    }
 }
