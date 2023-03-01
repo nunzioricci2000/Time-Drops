@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		151B85C229AFAA120070B4B6 /* TaskTimerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151B85C129AFAA120070B4B6 /* TaskTimerDetail.swift */; };
 		152E6DAF29A652DD001878E7 /* ExtentionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */; };
+		1579E91A29AFB15F00C4D8E7 /* Pene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579E91929AFB15F00C4D8E7 /* Pene.swift */; };
 		1588648029A7A584006D10DC /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588647F29A7A584006D10DC /* Onboarding.swift */; };
 		15E85AC329A7A63500E7FF33 /* MainViewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */; };
 		CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		151B85C129AFAA120070B4B6 /* TaskTimerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTimerDetail.swift; sourceTree = "<group>"; };
 		152E6DAE29A652DD001878E7 /* ExtentionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionsTests.swift; sourceTree = "<group>"; };
+		1579E91929AFB15F00C4D8E7 /* Pene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pene.swift; sourceTree = "<group>"; };
 		1588647F29A7A584006D10DC /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		15E85AC229A7A63500E7FF33 /* MainViewFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewFlow.swift; sourceTree = "<group>"; };
 		CD00EB4C29A518750082E9FB /* Chimpions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimpions.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +227,7 @@
 		CDF7E5DF29A7E82D0032459D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1579E91929AFB15F00C4D8E7 /* Pene.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				CDF7E5E729A81FE60032459D /* Fluidify.swift in Sources */,
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
+				1579E91A29AFB15F00C4D8E7 /* Pene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

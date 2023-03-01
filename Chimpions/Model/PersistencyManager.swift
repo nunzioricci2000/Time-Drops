@@ -10,11 +10,13 @@ import CoreData
 class PersistencyManager: ObservableObject {
     static let shared = PersistencyManager()
     static let preview = {
-        let manager = PersistencyManager()
-        try! manager.save(project: CProject(name: "Presentation"))
-        try! manager.save(project: CProject(name: "Presentation"))
-        try! manager.save(project: CProject(name: "Presentation"))
-        try! manager.save(project: CProject(name: "Presentation"))
+        let manager = shared
+        let project = CProject(name: "Presentation")
+        try! manager.save(project: project)
+        try! manager.save(project: CProject(name: "Cooking meth"))
+        try! manager.save(project: CProject(name: "Grabbing coke"))
+        try! manager.save(project: CProject(name: "Other horrible things"))
+        try! manager.save(task: CTask(projectId: project.id, duration: 7200))
         return manager
     }()
     private let encoder = JSONEncoder()
@@ -59,22 +61,33 @@ class PersistencyManager: ObservableObject {
     }
     
     func getAllProjects() -> [CProject] {
-        var keys = getAllKeys().filter { $0.starts(with: "project/") }
-        var projectsData = keys.map( { UserDefaults.standard.data(forKey: $0) }).filter({ $0 != nil }) as! [Data]
-        var projects = projectsData.map({ try? decode(project: $0) }).filter({ $0 != nil }) as! [CProject]
+        let keys = getAllKeys().filter { $0.starts(with: "project/") }
+        let projectsData = keys.map( { UserDefaults.standard.data(forKey: $0) }).filter({ $0 != nil }) as! [Data]
+        let projects = projectsData.map({ try? decode(project: $0) }).filter({ $0 != nil }) as! [CProject]
         return projects
     }
     
     func getAllTasks() -> [CTask] {
-        var keys = getAllKeys().filter { $0.starts(with: "task/") }
-        var tasksData = keys.map( { UserDefaults.standard.data(forKey: $0) }).filter({ $0 != nil }) as! [Data]
-        var tasks = tasksData.map({ try? decode(task: $0) }).filter({ $0 != nil }) as! [CTask]
+        let keys = getAllKeys()
+            .filter { $0.starts(with: "task/") }
+        let tasksData = keys
+            .map( { UserDefaults.standard.data(forKey: $0) })
+            .filter({ $0 != nil }) as! [Data]
+        let tasks = tasksData
+            .map({ try? decode(task: $0) })
+            .filter({ $0 != nil }) as! [CTask]
         return tasks
     }
     
     func save(project: CProject) throws {
         let data = try encoder.encode(project)
         let key = "project/" + project.id.uuidString
+        UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    func save(task: CTask) throws {
+        let data = try encoder.encode(task)
+        let key = "task/" + task.id.uuidString
         UserDefaults.standard.set(data, forKey: key)
     }
     
@@ -85,6 +98,15 @@ class PersistencyManager: ObservableObject {
         }
         let project = try decoder.decode(CProject.self, from: data)
         return project
+    }
+    
+    func load(taskId id: UUID) throws -> CTask {
+        let key = id.uuidString
+        guard let data = UserDefaults.standard.data(forKey: key) else {
+            throw PersistencyError.nilData(forKey: key)
+        }
+        let task = try decoder.decode(CTask.self, from: data)
+        return task
     }
 }
 

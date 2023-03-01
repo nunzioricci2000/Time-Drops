@@ -55,11 +55,11 @@ struct TaskTimerDetail: View {
                         }
                         
                         VStack (alignment: .leading){
-                            Text("task.name")
+                            Text(task.name ?? "Unknown")
                                 .font(.system(size: 24))
                                 .fontWeight(.bold)
                                 .fontDesign(.rounded)
-                            Text("durationConverter(durationInSeconds: task.duration)")
+                            Text(durationConverter(durationInSeconds: Int(task.duration)))
                                 .font(.system(size: 40))
                                 .fontWeight(.bold)
                                 .fontDesign(.rounded)
@@ -102,10 +102,10 @@ func durationConverter(durationInSeconds: Int) -> String {
     
     return result
 }
-/*
+
 struct TaskTimerDetail_Previews: PreviewProvider {
     static var previews: some View {
         
-        TaskTimerDetail(task: )
+        TaskTimerDetail(task: PersistencyManager.preview.getAllTasks()[0])
     }
-}*/
+}
