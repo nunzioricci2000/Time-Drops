@@ -11,6 +11,9 @@ class PersistencyManager: ObservableObject {
     static let shared = PersistencyManager()
     static let preview = {
         let manager = shared
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
         let project = CProject(name: "Presentation")
         try! manager.save(project: project)
         try! manager.save(project: CProject(name: "Cooking meth"))
