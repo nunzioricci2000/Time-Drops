@@ -7,8 +7,16 @@
 
 import CoreData
 
-class PersistencyManager {
+class PersistencyManager: ObservableObject {
     static let shared = PersistencyManager()
+    static let preview = {
+        let manager = PersistencyManager()
+        try! manager.save(project: CProject(name: "Presentation"))
+        try! manager.save(project: CProject(name: "Presentation"))
+        try! manager.save(project: CProject(name: "Presentation"))
+        try! manager.save(project: CProject(name: "Presentation"))
+        return manager
+    }()
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     

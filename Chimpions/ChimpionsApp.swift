@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct ChimpionsApp: App {
-    // @StateObject var appModel: AppModel = AppModel()
+    @StateObject var persistency = PersistencyManager.shared
     
     var body: some Scene {
         WindowGroup {
             PhysicsView()
-                // .environmentObject(appModel)
+                .environmentObject(persistency)
         }
     }
 }
