@@ -3,7 +3,6 @@
     <entity name="PProject" representedClassName="PProject" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PTask" inverseName="project" inverseEntity="PTask"/>
         <fetchedProperty name="remainingDuration" optional="YES">
             <fetchRequest name="fetchedPropertyFetchRequest" entity="PProject"/>
         </fetchedProperty>
@@ -12,6 +11,6 @@
         <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PProject" inverseName="tasks" inverseEntity="PProject"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PProject"/>
     </entity>
 </model>
