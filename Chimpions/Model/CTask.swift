@@ -11,6 +11,7 @@ struct CTask: Codable, Identifiable {
     var id = UUID()
     var projectId: UUID
     var duration: TimeInterval
+    var elapsedTime: TimeInterval = 0
     var project: CProject? {
         try? PersistencyManager.shared.load(projectId: projectId)
     }

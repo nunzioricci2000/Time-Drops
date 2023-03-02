@@ -11,6 +11,10 @@ struct TaskTimerDetail: View {
     
     @State var animationStatus: Double = 0
     @State var task: CTask
+    var elapsedRatio: Double {
+        task.elapsedTime / task.duration
+    }
+    @State var timer: Timer?
     
     var body: some View {
         
@@ -72,6 +76,14 @@ struct TaskTimerDetail: View {
                 
             }
             
+        }.onAppear {
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                task.elapsedTime += 1
+            }
+        }.onDisappear {
+            try? PersistencyManager.shared.save(task: task)
+            timer?.invalidate()
+            timer = nil
         }
         
     }
