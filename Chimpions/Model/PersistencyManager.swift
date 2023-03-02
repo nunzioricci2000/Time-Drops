@@ -9,7 +9,7 @@ import CoreData
 
 class PersistencyManager: ObservableObject {
     static let shared = PersistencyManager()
-    static let preview = {
+    static let preview = preview { manager in
         let manager = shared
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
@@ -20,10 +20,14 @@ class PersistencyManager: ObservableObject {
         try! manager.save(project: CProject(name: "Grabbing coke"))
         try! manager.save(project: CProject(name: "Other horrible things"))
         try! manager.save(task: CTask(projectId: project.id, duration: 7200))
-        return manager
-    }()
+    }
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
+    
+    static func preview(operations: @escaping (PersistencyManager) -> ()) -> PersistencyManager {
+        operations(shared)
+        return shared
+    }
     
     func key(for project: CProject) -> String {
         "project/" + project.id.uuidString
