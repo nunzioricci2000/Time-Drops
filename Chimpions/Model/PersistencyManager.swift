@@ -95,7 +95,7 @@ class PersistencyManager: ObservableObject {
     }
     
     func load(projectId id: UUID) throws -> CProject {
-        let key = id.uuidString
+        let key = "project/" + id.uuidString
         guard let data = UserDefaults.standard.data(forKey: key) else {
             throw PersistencyError.nilData(forKey: key)
         }
@@ -104,7 +104,7 @@ class PersistencyManager: ObservableObject {
     }
     
     func load(taskId id: UUID) throws -> CTask {
-        let key = id.uuidString
+        let key = "task/" + id.uuidString
         guard let data = UserDefaults.standard.data(forKey: key) else {
             throw PersistencyError.nilData(forKey: key)
         }
