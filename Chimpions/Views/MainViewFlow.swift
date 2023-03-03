@@ -49,157 +49,73 @@ struct MainViewFlow: View {
     }
     
     var body: some View {
-        ZStack{
-            StreamComponent()
-                .offset(y: taskSelectedOpen ? -130 : -150)
-                .scaleEffect(taskSelectedOpen ? 3.0 : 1.0)
-            
-            VStack {
-                
-                //Date and "Your Flow"
-                VStack{
-                    HStack {
-                        Spacer()
-                        VStack{
-                            HStack{
-                                Text(dayMonth)
-                                    .font(.system(size: 44))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                            HStack{
-                                Text(dayNameYear)
-                                    .font(.system(size: 24))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                        }
-                        .padding(.trailing)
-                    }
-                    
-                    HStack {
-                        Text("Your Flow")
-                            .font(.system(size: 32))
-                            .fontWeight(.bold)
-                            .fontDesign(.rounded)
-                        Spacer()
-                    }
-                    .padding(.leading)
-                    
-                    
-                }
-                .padding(.top, 10)
-                
-                Spacer()
-                
-                //Tasks Place holders
+        VStack{
+            VStack{
                 HStack {
-                    let taskPlaceholder = ZStack{
-                        squareAnimation(color: .gray)
-                        Text("Task")
-                            .font(.system(size: 22))
-                            .fontWeight(.bold)
-                            .fontDesign(.rounded)
-                    }
-                    
-                    if !taskSelectedOpen {
-                        taskPlaceholder
-                            .offset(x: -126)
-                        
-                        taskPlaceholder
-                            .onTapGesture {
-                                withAnimation(.linear(duration: 1.0)) {
-                                    taskSelectedOpen.toggle()
-                                }
-                            }
-                        
-                        taskPlaceholder
-                            .offset(x: 126)
-                    }
-                    
-                    else{
-                        ZStack {
-                            ZStack{
-                                squareAnimation(color: .gray)
-                                Text("1")
-                                    .font(.system(size: 22))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                            
-                            
-                            ZStack{
-                                squareAnimation(color: .gray)
-                                Text("2")
-                                    .font(.system(size: 22))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                            .onTapGesture {
-                                withAnimation(.linear(duration: 1.0)) {
-                                    taskSelectedOpen.toggle()
-                                }
-                            }
-                            
-                            ZStack{
-                                squareAnimation(color: .gray)
-                                Text("3")
-                                    .font(.system(size: 22))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                            
+                    Spacer()
+                    VStack{
+                        HStack{
+                            Text(dayMonth)
+                                .font(.system(size: 44))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
+                        }
+                        HStack{
+                            Text(dayNameYear)
+                                .font(.system(size: 24))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
                         }
                     }
+                    .padding(.trailing)
                 }
-                .offset(y: 20)
                 
-                Spacer()
-                
-                //Lake placeholder and Task Hours counter
-                VStack {
-                    Rectangle()
-                        .frame(width: 350, height: 200)
-                    .cornerRadius(30)
-                
-                HStack{
-                    ZStack{
-                        squareAnimation(color: .gray)
-                            .scaleEffect(0.8)
-                        Text("0")
-                            .font(.system(size: 48))
-                            .fontWeight(.bold)
-                            .fontDesign(.rounded)
-                    }
+                HStack {
+                    Text("Your Flow")
+                        .font(.system(size: 32))
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
                     Spacer()
                 }
                 .padding(.leading)
-                    
-                }
-                .offset(y: 50)
-                
-                Spacer()
-                
-                //Strange button
                 ZStack {
-                    Circle()
-                        .frame(width: 100)
-                    squareAnimation(color: .white)
-                        .scaleEffect(0.6)
-                    
-                }
+                    StreamComponent()
+                        .opacity(0.15)
+                    Carousel {
+                        ProjectButtonComponent()
+                        ProjectButtonComponent()
+                        ProjectButtonComponent()
+                    }
+                }.frame(height: 250)
+                    .offset(y: -25)
+                
             }
-            .onAppear(){
-                withAnimation(.linear(duration: 18.0).repeatForever(autoreverses: false)){
-                    startRotation.toggle()
-                }
+            .padding(.top, 10)
+            
+            Spacer(minLength: 100)
+            ZStack(alignment: .top) {
+                StreamComponent()
+                    .ignoresSafeArea()
+                HStack {
+                    Text("Today")
+                        .foregroundColor(.white)
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                    Spacer()
+                }.offset(y: 30)
+            }
+            .offset(y: 50)
+            
+        }
+        .onAppear(){
+            withAnimation(.linear(duration: 18.0).repeatForever(autoreverses: false)){
+                startRotation.toggle()
             }
         }
     }
+}
     
-    struct MainViewFlow_Previews: PreviewProvider {
-        static var previews: some View {
-            MainViewFlow()
-        }
+struct MainViewFlow_Previews: PreviewProvider {
+    static var previews: some View {
+        MainViewFlow()
     }
 }
