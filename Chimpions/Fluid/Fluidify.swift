@@ -20,7 +20,7 @@ struct Fluidify<Content: View>: View {
             ZStack {
                 content()
                 .foregroundColor(.black)
-                .blur(radius: 10)
+                .blur(radius: 5)
                 .zIndex(0)
                 Rectangle()
                     .foregroundColor(Color(red: 0.5, green: 0.5, blue: 0.5))
