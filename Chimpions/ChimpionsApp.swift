@@ -13,7 +13,7 @@ struct ChimpionsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PhysicsView()
+            MainViewFlow()
                 .environmentObject(persistency)
         }
     }
