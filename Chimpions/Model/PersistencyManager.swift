@@ -116,13 +116,11 @@ class PersistencyManager: ObservableObject {
     }
     
     func delete(project: CProject) throws {
-        let data = try encoder.encode(project)
         let key = "project/" + project.id.uuidString
         UserDefaults.standard.removeObject(forKey: key)
     }
     
     func delete(task: CTask) throws {
-        let data = try encoder.encode(task)
         let key = "task/" + task.id.uuidString
         UserDefaults.standard.removeObject(forKey: key)
     }
