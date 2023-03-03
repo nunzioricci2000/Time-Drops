@@ -26,6 +26,8 @@
 		CDDDEEB629AE51CD00182F0F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */; };
 		CDDDEEC529AF97B000182F0F /* CProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC429AF97B000182F0F /* CProject.swift */; };
 		CDDDEEC729AF980000182F0F /* CTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC629AF980000182F0F /* CTask.swift */; };
+		CDDDEED629B0ECE400182F0F /* ProjectButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */; };
+		CDDDEEDA29B16B9200182F0F /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEED929B16B9200182F0F /* Carousel.swift */; };
 		CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */; };
 		CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */; };
 		CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */; };
@@ -67,6 +69,8 @@
 		CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		CDDDEEC429AF97B000182F0F /* CProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CProject.swift; sourceTree = "<group>"; };
 		CDDDEEC629AF980000182F0F /* CTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTask.swift; sourceTree = "<group>"; };
+		CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtonComponent.swift; sourceTree = "<group>"; };
+		CDDDEED929B16B9200182F0F /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
 		CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsNode.swift; sourceTree = "<group>"; };
 		CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsConnection.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				CD00EB7F29A650E20082E9FB /* StreamShape.swift */,
+				CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */,
+				CDDDEED929B16B9200182F0F /* Carousel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
 				1579E91A29AFB15F00C4D8E7 /* Pene.swift in Sources */,
+				CDDDEEDA29B16B9200182F0F /* Carousel.swift in Sources */,
+				CDDDEED629B0ECE400182F0F /* ProjectButtonComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
