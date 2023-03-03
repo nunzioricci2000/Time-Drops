@@ -28,6 +28,7 @@
 		CDDDEEC729AF980000182F0F /* CTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC629AF980000182F0F /* CTask.swift */; };
 		CDDDEED629B0ECE400182F0F /* ProjectButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */; };
 		CDDDEEDA29B16B9200182F0F /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEED929B16B9200182F0F /* Carousel.swift */; };
+		CDDDEEDC29B24CDB00182F0F /* FluidComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEDB29B24CDB00182F0F /* FluidComponent.swift */; };
 		CDF7E5D029A6C08E0032459D /* GraphicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */; };
 		CDF7E5D229A6C0F90032459D /* GraphicsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */; };
 		CDF7E5D429A6C1810032459D /* GraphicsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */; };
@@ -71,6 +72,7 @@
 		CDDDEEC629AF980000182F0F /* CTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTask.swift; sourceTree = "<group>"; };
 		CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectButtonComponent.swift; sourceTree = "<group>"; };
 		CDDDEED929B16B9200182F0F /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		CDDDEEDB29B24CDB00182F0F /* FluidComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidComponent.swift; sourceTree = "<group>"; };
 		CDF7E5CF29A6C08E0032459D /* GraphicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsView.swift; sourceTree = "<group>"; };
 		CDF7E5D129A6C0F90032459D /* GraphicsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsNode.swift; sourceTree = "<group>"; };
 		CDF7E5D329A6C1810032459D /* GraphicsConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsConnection.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				CD00EB7C29A64C150082E9FB /* Graphics */,
 				CD00EB6129A564D80082E9FB /* Physics */,
 				CDF7E5E629A81FE60032459D /* Fluidify.swift */,
+				CDDDEEDB29B24CDB00182F0F /* FluidComponent.swift */,
 			);
 			path = Fluid;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				CDF7E5DE29A7D2430032459D /* ViewRoot.swift in Sources */,
 				15E85AC329A7A63500E7FF33 /* MainViewFlow.swift in Sources */,
 				CDF7E5E329A7EF180032459D /* GraphicsField.swift in Sources */,
+				CDDDEEDC29B24CDB00182F0F /* FluidComponent.swift in Sources */,
 				CDDDEEC529AF97B000182F0F /* CProject.swift in Sources */,
 				CDDDEEC729AF980000182F0F /* CTask.swift in Sources */,
 				CDF7E5E729A81FE60032459D /* Fluidify.swift in Sources */,
