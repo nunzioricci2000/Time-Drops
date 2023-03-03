@@ -38,43 +38,42 @@ struct TaskTimerDetail: View {
                 
                 VStack{
                     HStack {
-                        let offset: Double = 50
-                        
                         ZStack {
-                            Circle()
-                                .frame(width: 100)
-                                .offset(x: offset)
-                            Image(systemName: "plus")
-                                .foregroundColor(.white)
-                                .font(.system(size: offset))
-                                .offset(x: offset)
                             
                             Circle()
                                 .frame(width: 30)
-                                .offset(x: offset + 15, y: -75)
+                                .offset(x: timerFinished ? 0 : 15, y: timerFinished ? 0 : -75)
                             Circle()
                                 .frame(width: 50)
-                                .offset(x: offset + 55, y: -55)
+                                .offset(x: timerFinished ? 0 : 55, y: timerFinished ? 0 : -55)
+                            
+                            Circle()
+                                .frame(width: 100)
+                            Image(systemName: "plus")
+                                .foregroundColor(.white)
+                                .font(.system(size: 50))
+                                .rotationEffect(.degrees(timerFinished ? -45 : 0))
+                            
                         }
-                        if !timerFinished{
-                            VStack (alignment: .leading){
-                                Text(task.name ?? "Unknown")
-                                    .font(.system(size: 24))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                                Text(durationConverter(durationInSeconds: Int(task.duration - task.elapsedTime)))
-                                    .font(.system(size: 40))
-                                    .fontWeight(.bold)
-                                    .fontDesign(.rounded)
-                            }
-                            .offset(x: offset + 40, y: 15)
+                        .offset(x: timerFinished ? 293/2 : 50)
+                        
+                        VStack (alignment: .leading){
+                            Text(task.name ?? "Unknown")
+                                .font(.system(size: 24))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
+                            Text(durationConverter(durationInSeconds: Int(task.duration - task.elapsedTime)))
+                                .font(.system(size: 40))
+                                .fontWeight(.bold)
+                                .fontDesign(.rounded)
                         }
+                        .offset(x: 90, y: 15)
+                        .opacity(timerFinished ? 0 : 1)
                         Spacer()
                     }
                 }
                 .offset(y: 310)
                 
-                if timerFinished {
                     VStack(spacing: 15){
                         Text("You spilled")
                             .font(.system(size: 24))
@@ -89,8 +88,7 @@ struct TaskTimerDetail: View {
                             .fontWeight(.bold)
                             .fontDesign(.rounded)
                     }
-                    .transition(.opacity)
-                }
+                    .opacity(timerFinished ? 1 : 0)
                 
             }
             
@@ -151,7 +149,7 @@ struct TaskTimerDetail_Previews: PreviewProvider {
         TaskTimerDetail(task: PersistencyManager.preview { manager in
             let project = CProject(name: "Presentation")
             try? manager.save(project: project)
-            try? manager.save(task: CTask(projectId: project.id, duration: 5))
+            try? manager.save(task: CTask(projectId: project.id, duration: 20))
         }.getAllTasks()[0])
     }
 }
