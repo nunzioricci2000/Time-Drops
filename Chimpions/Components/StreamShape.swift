@@ -18,7 +18,9 @@ struct StreamShape: Shape {
     }
     
     func offset(for position: Double) -> CGVector {
-        10 * CGVector(dx: 0, dy: sin(2 * .pi * (animationStatus + position)))
+        let x = 2 * .pi * (animationStatus + position)
+        let y = 2 * .pi * (2 * animationStatus + position)
+        return 10 * CGVector(dx: 0, dy: (sin(x) + cos(2*y))/2)
     }
     
     func restPoint(for position: Double, in rect: CGRect, bottom: Bool = false) -> CGPoint {
@@ -53,10 +55,10 @@ struct StreamComponent: View {
     
     var body: some View {
         StreamShape(animationStatus: animationStatus)
-            .animation(.linear(duration: 2).repeatForever(autoreverses: false),
-                       value: animationStatus)
             .onAppear {
-                animationStatus = 1
+                withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+                    animationStatus += 1
+                }
             }
     }
 }
