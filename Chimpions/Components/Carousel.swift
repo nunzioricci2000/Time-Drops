@@ -30,8 +30,11 @@ struct Carousel: View {
             HStack(spacing: 0) {
                 Color.clear.frame(width: rect.size.width / 2)
                 ForEach(content.indices, id: \.self) { index in
-                    content[index]
-                        .frame(width: rect.size.width / 2)
+                    ZStack {
+                        Color.black.opacity(0.01)
+                        content[index]
+                            .frame(width: rect.size.width / 2)
+                    }
                 }
                 Color.clear.frame(width: rect.size.width / 2)
             }.offset(x: offset)
