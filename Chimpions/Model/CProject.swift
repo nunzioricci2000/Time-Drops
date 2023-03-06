@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CProject: Codable, Identifiable {
+struct CProject: Codable, Identifiable, Equatable {
     var id = UUID()
     var name: String
 }

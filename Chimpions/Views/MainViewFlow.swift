@@ -25,6 +25,13 @@ struct MainViewFlow: View {
     @State var startRotation = false
     @State var taskSelectedOpen = false
     
+    @State var projects: [CProject]  = {
+        var result: [CProject] = []
+        result.append(CProject(name: ""))
+        result.append(contentsOf:  PersistencyManager.shared.getAllProjects())
+        return result
+    }()
+    
     func squareAnimation(color: Color) -> some View {
         ZStack {
             Rectangle()
@@ -81,10 +88,18 @@ struct MainViewFlow: View {
                 ZStack {
                     StreamComponent()
                         .opacity(0.15)
-                    Carousel {
-                        ProjectButtonComponent()
-                        ProjectButtonComponent()
-                        ProjectButtonComponent()
+                    Carousel(projects) { project in
+                        ProjectButtonComponent(kind: project.name == "" ? .add : .normal, project: project, name: project.name)
+                            .onClose {
+                                if project.name == "" {
+                                    try? PersistencyManager.shared.delete(project: project)
+                                    let index = projects.firstIndex(where: { $0.id == project.id})
+                                    if let index = index, index != 0 {
+                                        projects.remove(at: index)
+                                    }
+                                    return
+                                }
+                            }
                     }
                 }.frame(height: 250)
                     .offset(y: -25)
@@ -110,12 +125,14 @@ struct MainViewFlow: View {
             withAnimation(.linear(duration: 18.0).repeatForever(autoreverses: false)){
                 startRotation.toggle()
             }
-        }
+            print(projects)
+        }.animation(.linear, value: projects)
     }
 }
     
 struct MainViewFlow_Previews: PreviewProvider {
     static var previews: some View {
         MainViewFlow()
+            .environmentObject(PersistencyManager.preview)
     }
 }

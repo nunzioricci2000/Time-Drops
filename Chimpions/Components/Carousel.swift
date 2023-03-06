@@ -13,6 +13,11 @@ struct Carousel: View {
     @State var dragOffset: CGFloat = 0
     @State var rect: CGRect = .zero
     let content: [AnyView]
+    @State private var tail: AnyView?
+    
+    var elementNumbers: Int {
+        content.count + (tail != nil ? 1 : 0)
+    }
     
     var selectedOffset: CGFloat {
         rect.width / 4 * CGFloat(-selected * 2 - 1)
@@ -25,19 +30,33 @@ struct Carousel: View {
         self.content = content().getViews
     }
     
+    init<Element>(_ list: [Element], content: (Element) -> some View) {
+        self.content = list.map({ AnyView(content($0)) })
+    }
+    
+    private init(_ content: [AnyView], tail: AnyView?) {
+        self.content = content
+        self.tail = tail
+    }
+    
+    func addTail(@ViewBuilder tail: @escaping () -> some View) -> Carousel {
+        return Carousel(content, tail: AnyView(tail()))
+    }
+    
     var body: some View {
         GeometryReader { rect in
             HStack(spacing: 0) {
                 Color.clear.frame(width: rect.size.width / 2)
                 ForEach(content.indices, id: \.self) { index in
-                    ZStack {
-                        Color.black.opacity(0.01)
-                        content[index]
-                            .frame(width: rect.size.width / 2)
-                    }
+                    content[index]
+                        .frame(width: rect.size.width / 2)
+                }
+                if tail != nil {
+                    tail!
+                        .frame(width: rect.size.width / 2)
                 }
                 Color.clear.frame(width: rect.size.width / 2)
-            }.offset(x: offset)
+            }.background(Color.black.opacity(0.001)).offset(x: offset)
                 .gesture(DragGesture()
                     .onChanged { gesture in
                         if startLocation == nil {
@@ -48,8 +67,8 @@ struct Carousel: View {
                         startLocation = nil
                         if dragOffset < -(rect.size.width) / 4 {
                             selected += 1
-                            if selected >= content.count {
-                                selected = content.count - 1
+                            if selected >= elementNumbers {
+                                selected = elementNumbers - 1
                             }
                         }
                         if dragOffset > (rect.size.width) / 4 {
@@ -72,10 +91,10 @@ struct Carousel: View {
 
 struct Carousel_Previews: PreviewProvider {
     static var previews: some View {
-        Carousel {
-            Color.red
-            Color.green
-            Color.blue
+        Carousel([Color.red, .green, .blue]) { element in
+            element
+        }.addTail {
+            Color.brown
         }
     }
 }

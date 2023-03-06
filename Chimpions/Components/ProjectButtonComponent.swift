@@ -11,6 +11,7 @@ struct ProjectButtonComponent: View {
     @State var kind: Kind = .add
     @Namespace var ns
     @State var project: CProject?
+    @State var onClose: () -> () = { }
     
     @State var name: String = ""
     
@@ -240,7 +241,12 @@ struct ProjectButtonComponent: View {
             .onChange(of: name) { newValue in
                 project?.name = name
                 if let project = project {
-                    try? PersistencyManager.shared.save(project: project)
+                    do {
+                        try PersistencyManager.shared.save(project: project)
+                        print("Project saved: \(project)")
+                    } catch {
+                        print("Some trouble during project saving: Project\(project) \n Error: \(error)")
+                    }
                 }
             }
     }
@@ -267,6 +273,11 @@ struct ProjectButtonComponent: View {
         if kind == .normal {
             kind = .active
         }
+    }
+    
+    func onClose(_ onClose: @escaping () -> ()) -> Self {
+        self.onClose = onClose
+        return self
     }
     
     enum Kind {
