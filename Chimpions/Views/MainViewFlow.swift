@@ -32,29 +32,6 @@ struct MainViewFlow: View {
         return result
     }()
     
-    func squareAnimation(color: Color) -> some View {
-        ZStack {
-            Rectangle()
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-                .rotationEffect(Angle(degrees: startRotation ? 360 : 0))
-                .foregroundColor(color)
-                .opacity(0.2)
-            Rectangle()
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-                .rotationEffect(Angle(degrees: startRotation ? 387 : 27))
-                .foregroundColor(color)
-                .opacity(0.2)
-            Rectangle()
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-                .rotationEffect(Angle(degrees: startRotation ? 58 : 418))
-                .foregroundColor(color)
-                .opacity(0.2)
-        }
-    }
-    
     var body: some View {
         VStack{
             VStack{
@@ -89,7 +66,7 @@ struct MainViewFlow: View {
                     StreamComponent()
                         .opacity(0.15)
                     Carousel(projects) { project in
-                        ProjectButtonComponent(kind: project.name == "" ? .add : .normal, project: project, name: project.name)
+                        ProjectButtonComponent(kind: project.name == "" ? .empty : .filledClosed, project: project, name: project.name)
                             .onClose {
                                 if project.name == "" {
                                     try? PersistencyManager.shared.delete(project: project)

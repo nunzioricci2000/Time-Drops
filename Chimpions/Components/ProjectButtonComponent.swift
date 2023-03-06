@@ -8,41 +8,41 @@
 import SwiftUI
 
 struct ProjectButtonComponent: View {
-    @State var kind: Kind = .add
+    @State var kind: Kind = .empty
     @Namespace var ns
-    @State var project: CProject?
+    @State var project : CProject?
     @State var onClose: () -> () = { }
     
     @State var name: String = ""
     
-    var isValid: Bool {
+    var nameIsValid: Bool {
         return name != ""
     }
     
     var mainFrame: CGSize {
         switch kind {
-        case .add:
+        case .empty:
             return CGSize(width: 132, height: 121)
-        case .active:
+        case .editing:
             return CGSize(width: 198, height: 237)
-        case .normal:
+        case .filledClosed:
             return CGSize(width: 116, height: 102)
         }
     }
     
     var mainCircleRect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return CGRect(x: 0 + 91.67 / 2,
                           y: 29.33 + 91.67 / 2,
                           width: 91.67,
                           height: 91.67)
-        case .active:
+        case .editing:
             return CGRect(x: 43 + 91.67 / 2,
                           y: 47 + 91.67 / 2,
                           width: 91.67,
                           height: 91.67)
-        case .normal:
+        case .filledClosed:
             return CGRect(x: 22 + 50 / 2,
                           y: 16 + 50 / 2,
                           width: 50,
@@ -52,14 +52,14 @@ struct ProjectButtonComponent: View {
     
     var addCircle1Rect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return CGRect(x: 53.17 + 22.92 / 2,
                           y: 0 + 22.92 / 2,
                           width: 22.92,
                           height: 22.92)
-        case .active:
+        case .editing:
             return mainCircleRect
-        case .normal:
+        case .filledClosed:
             return CGRect(x: 51 + 12.5 / 2,
                           y: 0 + 12.5 / 2,
                           width: 12.5,
@@ -69,14 +69,14 @@ struct ProjectButtonComponent: View {
     
     var addCircle2Rect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return CGRect(x: 86.17 + 45.83 / 2,
                           y: 5.5 + 45.83 / 2,
                           width: 45.83,
                           height: 45.83)
-        case .active:
+        case .editing:
             return mainCircleRect
-        case .normal:
+        case .filledClosed:
             return CGRect(x: 69 + 25 / 2,
                           y: 3 + 25 / 2,
                           width: 25,
@@ -86,42 +86,42 @@ struct ProjectButtonComponent: View {
     
     var focusCircle1Rect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return mainCircleRect
-        case .active:
+        case .editing:
             return CGRect(x: 0 + 35 / 2,
                           y: 114 + 35 / 2,
                           width: 35,
                           height: 35)
-        case .normal:
+        case .filledClosed:
             return mainCircleRect
         }
     }
     
     var focusCircle2Rect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return mainCircleRect
-        case .active:
+        case .editing:
             return CGRect(x: 143 + 55 / 2,
                           y: 90 + 55 / 2,
                           width: 55,
                           height: 55)
-        case .normal:
+        case .filledClosed:
             return mainCircleRect
         }
     }
     
     var focusCircle3Rect: CGRect {
         switch kind {
-        case .add:
+        case .empty:
             return mainCircleRect
-        case .active:
+        case .editing:
             return CGRect(x: 65 + 70 / 2,
                           y: 145 + 70 / 2,
                           width: 70,
                           height: 70)
-        case .normal:
+        case .filledClosed:
             return mainCircleRect
         }
     }
@@ -145,7 +145,7 @@ struct ProjectButtonComponent: View {
     }
     
     func focusGesture() -> _EndedGesture<_ChangedGesture<DragGesture>> {
-        isValid ? DragGesture()
+        nameIsValid ? DragGesture()
             .onChanged { gesture in
                 
             }.onEnded { gesture in
@@ -172,7 +172,7 @@ struct ProjectButtonComponent: View {
         Image(systemName: "plus")
             .font(.system(size: 25, weight: .bold, design: .rounded))
             .foregroundColor(.white)
-            .rotationEffect( kind == .active ? .degrees(45) : .zero)
+            .rotationEffect( kind == .editing ? .degrees(45) : .zero)
             .frame(width: mainCircleRect.width, height: mainCircleRect.height)
             .position(mainCircleRect.origin)
     }
@@ -191,7 +191,7 @@ struct ProjectButtonComponent: View {
     
     @ViewBuilder
     var labels: some View {
-        if isValid, kind == .active {
+        if nameIsValid, kind == .editing {
             Group {
                 Text("15 m")
                     .position(x: 1 + 33 / 2,
@@ -209,15 +209,15 @@ struct ProjectButtonComponent: View {
     
     @ViewBuilder
     var projectName: some View {
-        if kind != .add {
+        if kind != .empty {
             VStack {
-                if kind == .normal {
+                if kind == .filledClosed {
                     Color.clear
                     Text(name)
                         .matchedGeometryEffect(id: "projectName", in: ns, anchor: .leading)
                         .font(.system(size: 20, weight: .bold, design: .rounded))
                 }
-                if kind == .active {
+                if kind == .editing {
                     TextField("Project name", text: $name)
                         .matchedGeometryEffect(id: "projectName", in: ns, anchor: .leading)
                         .font(.system(size: 32, weight: .bold ,design: .rounded))
@@ -238,7 +238,7 @@ struct ProjectButtonComponent: View {
             projectName
             labels
         }.frame(width: mainFrame.width, height: mainFrame.height)
-            .onChange(of: name) { newValue in
+            /*.onChange(of: name) { newValue in
                 project?.name = name
                 if let project = project {
                     do {
@@ -248,30 +248,39 @@ struct ProjectButtonComponent: View {
                         print("Some trouble during project saving: Project\(project) \n Error: \(error)")
                     }
                 }
-            }
+            }*/
     }
     
     func clickButton() {
-        if kind == .add {
-            project = CProject(name: "")
-            try? PersistencyManager.shared.save(project: project!)
-            kind = .active
+        if kind == .empty {
+            kind = .editing
             return
         }
-        if kind == .active {
-            if isValid {
-                kind = .normal
-            } else {
-                if let project = project {
-                    try? PersistencyManager.shared.delete(project: project)
+        if kind == .editing {
+            if nameIsValid {
+                var foundHomonym = false
+                for tempProject in PersistencyManager.shared.getAllProjects(){
+                    if tempProject.name == name{
+                        foundHomonym = true
+                    }
                 }
-                project = nil
-                kind = .add
+                if !foundHomonym{
+                    project = CProject(name: name)
+                    try? PersistencyManager.shared.save(project: project!)
+                    kind = .filledClosed
+                }
+                else{
+                    kind = .empty
+                    name = project?.name ?? ""
+                }
+            } else {
+                try? PersistencyManager.shared.delete(project: project!)
+                kind = .empty
             }
             return
         }
-        if kind == .normal {
-            kind = .active
+        if kind == .filledClosed {
+            kind = .editing
         }
     }
     
@@ -281,7 +290,7 @@ struct ProjectButtonComponent: View {
     }
     
     enum Kind {
-        case add, normal, active
+        case empty, filledClosed, editing
     }
 }
 
