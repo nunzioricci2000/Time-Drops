@@ -22,9 +22,6 @@ struct MainViewFlow: View {
         return formatter.string(from: date)
     }()
     
-    @State var startRotation = false
-    @State var taskSelectedOpen = false
-    
     @State var projects: [CProject]  = {
         var result: [CProject] = []
         result.append(CProject(name: ""))
@@ -67,19 +64,10 @@ struct MainViewFlow: View {
                         .opacity(0.15)
                     Carousel(projects) { project in
                         ProjectButtonComponent(kind: project.name == "" ? .empty : .filledClosed, project: project, name: project.name)
-                            .onClose {
-                                if project.name == "" {
-                                    try? PersistencyManager.shared.delete(project: project)
-                                    let index = projects.firstIndex(where: { $0.id == project.id})
-                                    if let index = index, index != 0 {
-                                        projects.remove(at: index)
-                                    }
-                                    return
-                                }
-                            }
                     }
-                }.frame(height: 250)
-                    .offset(y: -25)
+                }
+                .frame(height: 250)
+                .offset(y: -25)
                 
             }
             .padding(.top, 10)
@@ -99,9 +87,6 @@ struct MainViewFlow: View {
             
         }
         .onAppear(){
-            withAnimation(.linear(duration: 18.0).repeatForever(autoreverses: false)){
-                startRotation.toggle()
-            }
             print(projects)
         }.animation(.linear, value: projects)
     }

@@ -253,6 +253,7 @@ struct ProjectButtonComponent: View {
     
     func clickButton() {
         if kind == .empty {
+            project = CProject(name: "")
             kind = .editing
             return
         }
@@ -260,12 +261,14 @@ struct ProjectButtonComponent: View {
             if nameIsValid {
                 var foundHomonym = false
                 for tempProject in PersistencyManager.shared.getAllProjects(){
-                    if tempProject.name == name{
-                        foundHomonym = true
+                    if tempProject.name == name {
+                        if tempProject.id != project?.id {
+                            foundHomonym = true
+                        }
                     }
                 }
-                if !foundHomonym{
-                    project = CProject(name: name)
+                if !foundHomonym {
+                    project?.name = name
                     try? PersistencyManager.shared.save(project: project!)
                     kind = .filledClosed
                 }
