@@ -315,6 +315,7 @@ struct ProjectButtonComponent: View {
                 task1Offset = .zero
             }
         }
+        onTaskAdd(15 * 60)
     }
     
     func addTask2() {
@@ -329,6 +330,7 @@ struct ProjectButtonComponent: View {
                 task2Offset = .zero
             }
         }
+        onTaskAdd(30 * 60)
     }
     
     func addTask3() {
@@ -343,6 +345,7 @@ struct ProjectButtonComponent: View {
                 task3Offset = .zero
             }
         }
+        onTaskAdd(60 * 60)
     }
     
     func onClose(_ onClose: @escaping () -> ()) -> Self {
