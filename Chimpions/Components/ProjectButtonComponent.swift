@@ -12,7 +12,7 @@ struct ProjectButtonComponent: View {
     @Namespace var ns
     @State var project : CProject?
     @State var onClose: () -> () = { }
-    
+    @State var onTaskAdd: (TimeInterval) -> () = { _ in }
     @State var name: String = ""
     
     var nameIsValid: Bool {
