@@ -22,7 +22,7 @@ struct MainViewFlow: View {
         return formatter.string(from: date)
     }()
     
-    @State var projects: [CProject]  = {
+    @State var projects: [CProject] = {
         var result: [CProject] = []
         result.append(CProject(name: ""))
         result.append(contentsOf:  PersistencyManager.shared.getAllProjects())
