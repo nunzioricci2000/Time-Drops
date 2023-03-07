@@ -19,6 +19,10 @@ struct ProjectButtonComponent: View {
         return name != ""
     }
     
+    @State var task1Offset: CGVector = .zero
+    @State var task2Offset: CGVector = .zero
+    @State var task3Offset: CGVector = .zero
+    
     var mainFrame: CGSize {
         switch kind {
         case .empty:
@@ -89,10 +93,9 @@ struct ProjectButtonComponent: View {
         case .empty:
             return mainCircleRect
         case .editing:
-            return CGRect(x: 0 + 35 / 2,
-                          y: 114 + 35 / 2,
-                          width: 35,
-                          height: 35)
+            return CGRect(origin: .init(x: 0 + 35 / 2,
+                                        y: 114 + 35 / 2) + task1Offset,
+                          size: .init(width: 35, height: 35))
         case .filledClosed:
             return mainCircleRect
         }
@@ -103,10 +106,9 @@ struct ProjectButtonComponent: View {
         case .empty:
             return mainCircleRect
         case .editing:
-            return CGRect(x: 143 + 55 / 2,
-                          y: 90 + 55 / 2,
-                          width: 55,
-                          height: 55)
+            return CGRect(origin: .init(x: 143 + 55 / 2,
+                                        y: 90 + 55 / 2) + task2Offset,
+                          size: .init(width: 55, height: 55))
         case .filledClosed:
             return mainCircleRect
         }
@@ -117,10 +119,9 @@ struct ProjectButtonComponent: View {
         case .empty:
             return mainCircleRect
         case .editing:
-            return CGRect(x: 65 + 70 / 2,
-                          y: 145 + 70 / 2,
-                          width: 70,
-                          height: 70)
+            return CGRect(origin: .init(x: 65 + 70 / 2,
+                                        y: 145 + 70 / 2) + task3Offset,
+                          size: .init(width: 70, height: 70))
         case .filledClosed:
             return mainCircleRect
         }
@@ -232,8 +233,23 @@ struct ProjectButtonComponent: View {
                 addCircle1
                 addCircle2
                 focusCircle1
+                .onTapGesture {
+                    if nameIsValid {
+                        addTask1()
+                    }
+                }
                 focusCircle2
+                .onTapGesture {
+                    if nameIsValid {
+                        addTask2()
+                    }
+                }
                 focusCircle3
+                .onTapGesture {
+                    if nameIsValid {
+                        addTask3()
+                    }
+                }
             button
             projectName
             labels
@@ -284,6 +300,48 @@ struct ProjectButtonComponent: View {
         }
         if kind == .filledClosed {
             kind = .editing
+        }
+    }
+    
+    func addTask1() {
+        withAnimation(.easeInOut(duration: 0.5)) {
+            task1Offset = .init(dx: 0, dy: 350)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            task1Offset = .init(dx: 100, dy: -40)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            withAnimation(.easeInOut(duration: 0.4)) {
+                task1Offset = .zero
+            }
+        }
+    }
+    
+    func addTask2() {
+        withAnimation(.easeInOut(duration: 0.5)) {
+            task2Offset = .init(dx: 0, dy: 350)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            task2Offset = .init(dx: -80, dy: -30)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            withAnimation(.easeInOut(duration: 0.4)) {
+                task2Offset = .zero
+            }
+        }
+    }
+    
+    func addTask3() {
+        withAnimation(.easeInOut(duration: 0.5)) {
+            task3Offset = .init(dx: 0, dy: 350)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            task3Offset = .init(dx: -10, dy: -90)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            withAnimation(.easeInOut(duration: 0.4)) {
+                task3Offset = .zero
+            }
         }
     }
     
