@@ -230,21 +230,21 @@ struct ProjectButtonComponent: View {
     
     var body: some View {
         ZStack {
-                addCircle1
-                addCircle2
-                focusCircle1
+            addCircle1
+            addCircle2
+            focusCircle1
                 .onTapGesture {
                     if nameIsValid {
                         addTask1()
                     }
                 }
-                focusCircle2
+            focusCircle2
                 .onTapGesture {
                     if nameIsValid {
                         addTask2()
                     }
                 }
-                focusCircle3
+            focusCircle3
                 .onTapGesture {
                     if nameIsValid {
                         addTask3()

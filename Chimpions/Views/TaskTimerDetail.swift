@@ -14,6 +14,7 @@ struct TaskTimerDetail: View {
     @State var elapsedRatio: Double = 0
     @State var timer: Timer?
     @State var timerFinished = false
+    @Binding var displayTimer: Bool
     
     var body: some View {
         
@@ -21,15 +22,27 @@ struct TaskTimerDetail: View {
             Color.black.ignoresSafeArea()
             
             ZStack{
-                StreamShape(animationStatus: animationStatus)
-                    .foregroundColor(.white)
-                    .frame(height: 1000)
-                    .offset(y: 600 * abs(elapsedRatio-1))
-                    .onAppear(){
-                        withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)){
-                            animationStatus = 1
-                        }
+                ZStack(alignment: .topLeading) {
+                    if !timerFinished {
+                        Text("X")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                            .foregroundColor(.white)
+                            .position(x: 40, y: 140)
+                            .onTapGesture {
+                                displayTimer.toggle()
+                            }
                     }
+                    StreamComponent(animationStatus: animationStatus)
+                        .foregroundColor(.white)
+                        .frame(height: 1000)
+                        .offset(y: 600 * abs(elapsedRatio-1))
+                        .onAppear(){
+                            withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)){
+                                animationStatus = 1
+                            }
+                        }.blendMode(.exclusion)
+                }.compositingGroup()
                 
                 Circle()
                     .foregroundColor(.white)
@@ -56,7 +69,6 @@ struct TaskTimerDetail: View {
                             
                         }
                         .offset(x: timerFinished ? 293/2 : 50)
-                        
                         VStack (alignment: .leading){
                             Text(task.name ?? "Unknown")
                                 .font(.system(size: 24))
@@ -150,6 +162,6 @@ struct TaskTimerDetail_Previews: PreviewProvider {
             let project = CProject(name: "Presentation")
             try? manager.save(project: project)
             try? manager.save(task: CTask(projectId: project.id, duration: 20))
-        }.getAllTasks()[0])
+        }.getAllTasks()[0], displayTimer: .constant(true))
     }
 }

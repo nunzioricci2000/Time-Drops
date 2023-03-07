@@ -23,6 +23,7 @@
 		CD00EB7629A5723C0082E9FB /* PhysicsBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */; };
 		CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */; };
 		CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7F29A650E20082E9FB /* StreamShape.swift */; };
+		CDC69F4929B7776500050F93 /* TaskButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC69F4829B7776500050F93 /* TaskButtonComponent.swift */; };
 		CDDDEEB629AE51CD00182F0F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */; };
 		CDDDEEC529AF97B000182F0F /* CProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC429AF97B000182F0F /* CProject.swift */; };
 		CDDDEEC729AF980000182F0F /* CTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC629AF980000182F0F /* CTask.swift */; };
@@ -67,6 +68,7 @@
 		CD00EB7529A5723C0082E9FB /* PhysicsBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyTests.swift; sourceTree = "<group>"; };
 		CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsJoint.swift; sourceTree = "<group>"; };
 		CD00EB7F29A650E20082E9FB /* StreamShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamShape.swift; sourceTree = "<group>"; };
+		CDC69F4829B7776500050F93 /* TaskButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskButtonComponent.swift; sourceTree = "<group>"; };
 		CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		CDDDEEC429AF97B000182F0F /* CProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CProject.swift; sourceTree = "<group>"; };
 		CDDDEEC629AF980000182F0F /* CTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTask.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				CD00EB7F29A650E20082E9FB /* StreamShape.swift */,
 				CDDDEED529B0ECE400182F0F /* ProjectButtonComponent.swift */,
 				CDDDEED929B16B9200182F0F /* Carousel.swift */,
+				CDC69F4829B7776500050F93 /* TaskButtonComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				CDDDEEC529AF97B000182F0F /* CProject.swift in Sources */,
 				CDDDEEC729AF980000182F0F /* CTask.swift in Sources */,
 				CDF7E5E729A81FE60032459D /* Fluidify.swift in Sources */,
+				CDC69F4929B7776500050F93 /* TaskButtonComponent.swift in Sources */,
 				CD00EB5029A518750082E9FB /* ChimpionsApp.swift in Sources */,
 				CD00EB6029A562350082E9FB /* CoreGraphics+Operations.swift in Sources */,
 				1579E91A29AFB15F00C4D8E7 /* Pene.swift in Sources */,

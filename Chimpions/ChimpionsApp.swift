@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ChimpionsApp: App {
-    @StateObject var persistency = PersistencyManager.shared
+    @StateObject var persistency = PersistencyManager.preview
     
     var body: some Scene {
         WindowGroup {

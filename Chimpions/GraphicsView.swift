@@ -11,7 +11,17 @@ struct GraphicsView: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.black
+            Text("Prova")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .foregroundColor(.white)
+            VStack(spacing: 0) {
+                Color.black
+                Color.white
+            }.blendMode(.exclusion)
+        }.compositingGroup()
     }
 }
 
