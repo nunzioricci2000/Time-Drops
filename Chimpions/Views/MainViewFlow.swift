@@ -80,8 +80,17 @@ struct MainViewFlow: View {
                             .opacity(0.15)
                         Carousel(projects) { project in
                             ProjectButtonComponent(kind: project.name == "" ? .empty : .filledClosed, project: project, onTaskAdd: { interval in
-                                let task = CTask(projectId: project.id, duration: interval)
-                                tasks.append(task)
+                                var task: CTask
+                                if let existentTask = PersistencyManager.shared.getAllTasks().first(where: { $0.projectId == project.id }) {
+                                    task = existentTask
+                                    task.duration += interval
+                                    if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+                                        tasks[index] = task
+                                    }
+                                } else {
+                                    task = CTask(projectId: project.id, duration: interval)
+                                    tasks.append(task)
+                                }
                                 try? PersistencyManager.shared.save(task: task)
                             }, name: project.name)
                         }

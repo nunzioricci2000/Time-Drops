@@ -10,11 +10,14 @@ import SwiftUI
 struct TaskButtonComponent: View {
     @State var task: CTask
     
+    var duration: String {
+        durationConverter(durationInSeconds: Int(task.duration))
+    }
+    
     var body: some View {
         VStack {
             ZStack {
-                Circle()
-                    .frame(width: 100, height: 100)
+                Image("TaskPond")
                 Image(systemName: "play.fill")
                     .font(.largeTitle)
                     .foregroundColor(.black)
@@ -22,7 +25,7 @@ struct TaskButtonComponent: View {
             Text(task.name!)
                 .font(.system(size: 25, design: .rounded))
                 .fontWeight(.semibold)
-            Text(durationConverter(durationInSeconds: Int(task.duration)))
+            Text(duration)
                 .font(.system(size: 20, design: .rounded))
                 .fontWeight(.semibold)
         }
