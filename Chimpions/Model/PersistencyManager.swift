@@ -12,9 +12,8 @@ class PersistencyManager: ObservableObject {
     static let preview = preview { manager in
         let project = CProject(name: "Presentation")
         try! manager.save(project: project)
-        try! manager.save(project: CProject(name: "Cooking meth"))
-        try! manager.save(project: CProject(name: "Grabbing coke"))
-        try! manager.save(project: CProject(name: "Other horrible things"))
+        try! manager.save(project: CProject(name: "Meeting"))
+        try! manager.save(project: CProject(name: "Work"))
         try! manager.save(task: CTask(projectId: project.id, duration: 7200))
     }
     private let encoder = JSONEncoder()
