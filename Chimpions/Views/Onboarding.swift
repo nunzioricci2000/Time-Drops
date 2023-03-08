@@ -8,75 +8,41 @@
 import SwiftUI
 
 struct Onboarding: View {
+    @State var selection: Int = 1
+    @State var onFinish: () -> () = { }
+    
     var body: some View {
-        ZStack{
-            StreamComponent()
-                .offset(y: 50)
-            
-            VStack{
-                
-                VStack (alignment: .leading){
-                    Text("Welcome!")
-                        .font(.system(size: 50.0))
-                        .fontWeight(.semibold)
-                        .fontDesign(.rounded)
-                    
-                    
-                    Text("appName? will help you manage your daily tasks.")
-                        .font(.system(size: 25.0))
-                        .fontWeight(.medium)
-                        .fontDesign(.rounded)
-                    
+        TabView(selection: $selection) {
+            Image("onboarding/1")
+                .resizable()
+                .scaledToFill()
+                .tag(1)
+                .onTapGesture {
+                    selection += 1
                 }
-                .padding(.top, 190.0)
-                
-                Spacer()
-                
-                VStack {
-                    Text("To do that, let’s set your daily working hours.")
-                        .font(.system(size: 20))
-                        .fontDesign(.rounded)
-                    
-                    HStack{
-                        Spacer()
-                        ForEach(1...7, id: \.self){ id in
-                            VStack {
-                                ZStack{
-                                    Rectangle()
-                                        .cornerRadius(6.0)
-                                        .frame(width: 35, height: 35)
-                                        .padding(.horizontal, 5.0)
-                                        .foregroundColor(Color("PlaceHolderFirst"))
-                                    Text("\(Int.random(in: 0...24))")
-                                        .fontDesign(.rounded)
-                                }
-                                Text("D\(id)")
-                                    .foregroundColor(Color("PlaceHolderSecond"))
-                                    .fontDesign(.rounded)
-                            }
-                        }
-                        Spacer()
-                    }
-                    
+            Image("onboarding/2")
+                .resizable()
+                .scaledToFill()
+                .tag(2)
+                .onTapGesture {
+                    selection += 1
                 }
-                .offset(y: -90)
-                
-                Spacer()
-                
-                ZStack {
-                    Rectangle()
-                        .cornerRadius(15.0)
-                        .frame(width: 120, height: 60)
-                    Text("Done")
-                        .foregroundColor(.white)
-                        .font(.system(size: 22))
-                        .fontDesign(.rounded)
+            Image("onboarding/3")
+                .resizable()
+                .scaledToFill()
+                .tag(3)
+                .onTapGesture {
+                    selection += 1
                 }
-                
-            }
-            .padding(.horizontal)
-        }
-        
+            Image("onboarding/4")
+                .resizable()
+                .scaledToFill()
+                .tag(4)
+                .onTapGesture {
+                    onFinish()
+                }
+        }.ignoresSafeArea()
+            .padding(-10)
     }
     
     

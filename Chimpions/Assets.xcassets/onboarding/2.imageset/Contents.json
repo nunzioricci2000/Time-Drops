@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "2 EN.svg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "IT 2.svg",
+      "idiom" : "universal",
+      "locale" : "it"
+    },
+    {
+      "filename" : "2 BR.svg",
+      "idiom" : "universal",
+      "locale" : "pt-BR"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

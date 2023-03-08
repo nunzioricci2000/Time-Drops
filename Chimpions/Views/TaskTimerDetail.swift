@@ -15,6 +15,15 @@ struct TaskTimerDetail: View {
     @State var timer: Timer?
     @State var timerFinished = false
     @Binding var displayTimer: Bool
+    @AppStorage("lastRefresh") var __lastRefresh: TimeInterval = Date.now.timeIntervalSince1970
+    var lastRefresh: Date {
+        get {
+            Date(timeIntervalSince1970: __lastRefresh)
+        }
+        nonmutating set {
+            __lastRefresh = newValue.timeIntervalSince1970
+        }
+    }
     
     var body: some View {
         
@@ -105,8 +114,17 @@ struct TaskTimerDetail: View {
             }
             
         }.onAppear {
+            let deltaTime = Date.now.timeIntervalSince(lastRefresh)
+            task.elapsedTime += deltaTime
+            withAnimation(.linear(duration: 1)){
+                if task.elapsedTime <= task.duration{
+                    elapsedRatio = task.elapsedTime / task.duration
+                }
+            }
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                task.elapsedTime += 1
+                let now = Date.now
+                task.elapsedTime += now.timeIntervalSince(lastRefresh)
+                lastRefresh = now
                 withAnimation(.linear(duration: 1)){
                     if task.elapsedTime <= task.duration{
                         elapsedRatio = task.elapsedTime / task.duration
@@ -124,6 +142,7 @@ struct TaskTimerDetail: View {
             try? PersistencyManager.shared.save(task: task)
             timer?.invalidate()
             timer = nil
+            lastRefresh = .now
         }
         
     }

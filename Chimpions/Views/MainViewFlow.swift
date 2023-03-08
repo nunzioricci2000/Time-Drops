@@ -37,9 +37,14 @@ struct MainViewFlow: View {
     
     @State var displayTimer: Bool = false
     @State var selectedTask: CTask!
+    @AppStorage("alreadyOpened") var alreadyOpened: Bool = false
     
     var body: some View {
-        if displayTimer {
+        if !alreadyOpened {
+            Onboarding {
+                alreadyOpened = true
+            }
+        } else if displayTimer {
             TaskTimerDetail(task: selectedTask, displayTimer: $displayTimer)
                 .transition(.move(edge: .bottom))
                 .onAppear {
@@ -101,7 +106,7 @@ struct MainViewFlow: View {
                 }
                 .padding(.top, 10)
                 
-                Spacer(minLength: 100)
+                Spacer(minLength: 80)
                 ZStack(alignment: .top) {
                     StreamComponent()
                         .ignoresSafeArea()

@@ -1,0 +1,25 @@
+{
+  "images" : [
+    {
+      "filename" : "en Group 74.svg",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "it Group 70.svg",
+      "idiom" : "universal",
+      "locale" : "it"
+    },
+    {
+      "filename" : "br Group 75.svg",
+      "idiom" : "universal",
+      "locale" : "pt-BR"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
+  }
+}

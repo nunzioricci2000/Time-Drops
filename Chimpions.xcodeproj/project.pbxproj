@@ -24,6 +24,7 @@
 		CD00EB7B29A585990082E9FB /* PhysicsJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */; };
 		CD00EB8029A650E20082E9FB /* StreamShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00EB7F29A650E20082E9FB /* StreamShape.swift */; };
 		CDC69F4929B7776500050F93 /* TaskButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC69F4829B7776500050F93 /* TaskButtonComponent.swift */; };
+		CDC69F4C29B8D58D00050F93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDC69F4E29B8D58D00050F93 /* Localizable.strings */; };
 		CDDDEEB629AE51CD00182F0F /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */; };
 		CDDDEEC529AF97B000182F0F /* CProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC429AF97B000182F0F /* CProject.swift */; };
 		CDDDEEC729AF980000182F0F /* CTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDDEEC629AF980000182F0F /* CTask.swift */; };
@@ -69,6 +70,9 @@
 		CD00EB7A29A585990082E9FB /* PhysicsJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsJoint.swift; sourceTree = "<group>"; };
 		CD00EB7F29A650E20082E9FB /* StreamShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamShape.swift; sourceTree = "<group>"; };
 		CDC69F4829B7776500050F93 /* TaskButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskButtonComponent.swift; sourceTree = "<group>"; };
+		CDC69F4D29B8D58D00050F93 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CDC69F4F29B8D59300050F93 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CDC69F5029B8D59300050F93 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CDDDEEB529AE51CD00182F0F /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		CDDDEEC429AF97B000182F0F /* CProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CProject.swift; sourceTree = "<group>"; };
 		CDDDEEC629AF980000182F0F /* CTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTask.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		CD00EB4E29A518750082E9FB /* Chimpions */ = {
 			isa = PBXGroup;
 			children = (
+				CDC69F4E29B8D58D00050F93 /* Localizable.strings */,
 				CD00EB4F29A518750082E9FB /* ChimpionsApp.swift */,
 				CDF7E5DF29A7E82D0032459D /* ViewModel */,
 				CDF7E5D529A7A43C0032459D /* Model */,
@@ -328,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD00EB5729A518750082E9FB /* Preview Assets.xcassets in Resources */,
+				CDC69F4C29B8D58D00050F93 /* Localizable.strings in Resources */,
 				CD00EB5429A518750082E9FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +399,19 @@
 			targetProxy = CD00EB7029A572070082E9FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDC69F4E29B8D58D00050F93 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDC69F4D29B8D58D00050F93 /* en */,
+				CDC69F4F29B8D59300050F93 /* it */,
+				CDC69F5029B8D59300050F93 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CD00EB5829A518750082E9FB /* Debug */ = {
